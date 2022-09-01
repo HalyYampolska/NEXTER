@@ -10,10 +10,21 @@
     padding-top: 4rem;
 
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;
+    //grid-template-rows: 1fr min-content 6rem 1fr;
+    //grid-template-columns: max-content;
+    //media queries
+    grid-template-columns: minmax(min-content, max-content);
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
     grid-row-gap: 1.5rem;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+         grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;
+    }
 
     &__logo {
         height: 3rem;
@@ -30,6 +41,8 @@
         grid-template-columns: 1fr max-content 1fr;
         grid-column-gap: 1.5rem;
         align-items: center;
+        //media queries
+        align-items: center;
 
         font-size: 1.6rem;
         color: $color-grey-light-2;
@@ -40,7 +53,7 @@
             height: 1px;
             display: block;
             background-color: currentColor;
-        }
+        } 
     }
 
     &__seenon-logos {
@@ -50,7 +63,11 @@
         justify-items: center;
 
         img {
-            height: 2.5rem;
+            //height: 2.5rem;
+            //media queries
+            max-height: 2.5rem;
+            max-width: 100%;
+
             filter: brightness(70%);
         }
 
