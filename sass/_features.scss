@@ -9,9 +9,34 @@
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 6rem;
     align-items: start;
+
+    /*
+    example writing code for old versions browser
+
+    we must delite this part
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 6rem;
+    align-items: start;
+    */
 }
 
 .feature {
+
+    //example writing code for old versions browser
+    /*
+    float: left;
+    width: 33.3333;
+    margin-bottom: 6rem;
+
+    @support(display: grid) {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    */
 
     display: grid;
     grid-template-columns: min-content 1fr;
